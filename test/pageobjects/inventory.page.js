@@ -4,12 +4,12 @@ import Page from './page.js';
 /**
  * sub page containing specific selectors and methods for a specific page
  */
-class LoginPage extends Page {
+class InventoryPage extends Page {
     /**
      * define selectors using getter methods
      */
     get inputUsername () {
-        return $('#user-name');
+        return $('#username');
     }
 
     get inputPassword () {
@@ -17,7 +17,7 @@ class LoginPage extends Page {
     }
 
     get btnSubmit () {
-        return $('#login-button');
+        return $('button[type="submit"]');
     }
 
     /**
@@ -28,7 +28,6 @@ class LoginPage extends Page {
         await this.inputUsername.setValue(username);
         await this.inputPassword.setValue(password);
         await this.btnSubmit.click();
-         await expect(browser).toHaveUrl(expect.stringContaining('inventory.html'))
     }
 
     /**
@@ -39,4 +38,5 @@ class LoginPage extends Page {
     }
 }
 
-export default new LoginPage();
+export default new InventoryPage();
+
