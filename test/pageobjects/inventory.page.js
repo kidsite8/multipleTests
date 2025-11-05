@@ -8,17 +8,17 @@ class InventoryPage extends Page {
     /**
      * define selectors using getter methods
      */
-    get inputUsername () {
-        return $('#username');
+  
+
+    get btnAddToCart () {
+        return $$('button.btn_inventory');
     }
 
-    get inputPassword () {
-        return $('#password');
+    get btnRemoveFromCart () {
+        return $$('//button[contains(@id, "remove")]');
     }
 
-    get btnSubmit () {
-        return $('button[type="submit"]');
-    }
+     
 
     /**
      * a method to encapsule automation code to interact with the page
@@ -30,13 +30,19 @@ class InventoryPage extends Page {
         await this.btnSubmit.click();
     }
 
+     
+    }
+    
+    
+
+
     /**
      * overwrite specific options to adapt it to page object
      */
-    open () {
+    open () 
         return super.open("");
-    }
-}
+    
+
 
 export default new InventoryPage();
 
